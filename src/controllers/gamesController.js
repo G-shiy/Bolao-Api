@@ -28,7 +28,7 @@ module.exports = {
 
   
   async create(req, res) {
-    const { title, value, price, cotas, available } = req.body;
+    const { title, value, price, cotas, available, numerosDoJogo } = req.body;
 
     if(!title) return res.status(400).json({erro: "Necessita de um titulo"})
     if(!value) return res.status(400).json({erro: "Necessita de um valor"})
@@ -41,6 +41,7 @@ module.exports = {
       price,
       cotas,
       available,
+      numerosDoJogo
     });
 
     return res.status(201).json(Game);

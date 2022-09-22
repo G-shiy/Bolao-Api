@@ -23,18 +23,21 @@ const gamesSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
+  numerosDoJogo:{
+    type: String,
+
+  },
 
   // cria uma relação many to many em jogadores
   // para salvar os jogadores que estão participando
 
-  /*
   jogadores: [
     {
       type: mongoose.Types.ObjectId,
       ref: "user",
     },
   ],
-  */
+  
   available: {
     type: Boolean,
     default: false,
