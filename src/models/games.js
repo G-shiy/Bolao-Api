@@ -23,11 +23,24 @@ const gamesSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  status: {
-    type: String,
-    default: "Disponível",
+
+  // cria uma relação many to many em jogadores
+  // para salvar os jogadores que estão participando
+
+  /*
+  jogadores: [
+    {
+      type: mongoose.Types.ObjectId,
+      ref: "user",
+    },
+  ],
+  */
+  available: {
+    type: Boolean,
+    default: false,
     required: true,
   },
+  //Define se o jogo está Disponível ou já foi finalizado para o resultado
   created_at: {
     type: Date,
     required: true,
