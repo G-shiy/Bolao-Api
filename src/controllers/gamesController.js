@@ -2,8 +2,8 @@ const Games = require("../models/games.js");
 const User = require("../models/participants");
 
 module.exports = {
-  //retorna todos os jogos
-  async store(req, res) {
+  //retorna todos os jogos disponíveis
+  async storeAvailable(req, res) {
     try {
       const listgames = await Games.find({"available": true});
       return await res.status(200).json(listgames);
@@ -13,7 +13,20 @@ module.exports = {
         .json({ Message: `Um erro inesperado ocorreu ${error}` });
     }
   },
+  //retorna todos os jogos indisponíveis
 
+  async storeUnavailable(req, res) {
+    try {
+      const listgames = await Games.find({"available": false});
+      return await res.status(200).json(listgames);
+    } catch (error) {
+      return await res
+        .status(400)
+        .json({ Message: `Um erro inesperado ocorreu ${error}` });
+    }
+  },
+
+  
   async create(req, res) {
     const { title, value, price, cotas, available } = req.body;
 
