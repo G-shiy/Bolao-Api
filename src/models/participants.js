@@ -19,11 +19,11 @@ const userSchema = mongoose.Schema({
     type: Number,
     required: true,
   },
-  /*
+
   games: [{
     type: mongoose.Types.ObjectId,
     ref: 'games',
-  }]*/
+  }]
   
 })
 
