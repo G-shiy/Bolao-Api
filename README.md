@@ -9,8 +9,8 @@ Lá você ira configurar a rota, caso use docker pode apenas dar um
 `docker-compose -f docker-compose.yml` para rodar a database no docker
 
 **Observação: O Banco de dados virá sem senha ou qualquer barreira** 
-**de segurança, recomendo fortemente utilizar uma senha para DB**
-**em produção**
+**de segurança, recomendo fortemente utilizar uma senha para um**
+**banco de dados em produção**
 
 
 ## Instalação
