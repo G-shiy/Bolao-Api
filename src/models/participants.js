@@ -18,7 +18,12 @@ const userSchema = mongoose.Schema({
   phone:{
     type: Number,
     required: true,
-  }
+  },
+  /*
+  games: [{
+    type: mongoose.Types.ObjectId,
+    ref: 'games',
+  }]*/
   
 })
 
